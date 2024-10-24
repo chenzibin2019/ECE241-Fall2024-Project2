@@ -10,11 +10,11 @@ if __name__ == '__main__':
     print("--------- Task2 check if path exists ---------")
     routers = [v.id for v in random.sample(list(net.network.vertList.values()), 5)]
     for i in range(4):
-        print('Router1:', routers[i], ', Router2:', routers[i + 1], 'path exist?:',
-              net.pathExist(routers[i], routers[i + 1]))
+        print('Router1:', routers[i], ', Router2:', routers[i + 1], 'path exist within 5 hops?:',
+              net.pathExist(routers[i], routers[i + 1], 5))
 
     print("--------- Task3 build MST ---------")
-    net.buildMST()
+    net.buildMST(routers[0])
     print('graph node size', net.MST.numVertices)
 
     print("--------- Task4 find shortest path in MST ---------")
